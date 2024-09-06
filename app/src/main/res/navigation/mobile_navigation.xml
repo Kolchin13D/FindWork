@@ -23,4 +23,24 @@
         android:label="@string/title_response"
         tools:layout="@layout/fragment_notifications" />
 
+    <fragment
+        android:id="@+id/navigation_messages"
+        android:name="com.example.findwork.ui.messages.MessagesFragment"
+        android:label="@string/title_messages"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.findwork.ui.messages.MessagesFragment"
+        android:label="@string/title_messages"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.example.findwork.ui.login.LoginFragment"
+        tools:layout="@layout/fragment_login" />
+
+
+
+
 </navigation>
