@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_search">
+    app:startDestination="@+id/navigation_login">
 
     <fragment
         android:id="@+id/navigation_search"
@@ -31,14 +31,18 @@
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.example.findwork.ui.messages.MessagesFragment"
+        android:name="com.example.findwork.ui.profile.ProfileFragment"
         android:label="@string/title_messages"
         tools:layout="@layout/fragment_notifications" />
 
     <fragment
         android:id="@+id/navigation_login"
         android:name="com.example.findwork.ui.login.LoginFragment"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_navigation_login_to_navigation_search"
+            app:destination="@id/navigation_search" />
+    </fragment>
 
 
 
