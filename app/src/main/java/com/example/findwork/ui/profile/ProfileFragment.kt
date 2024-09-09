@@ -9,12 +9,13 @@ import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import com.example.findwork.R
 import com.example.findwork.databinding.FragmentDashboardBinding
+import com.example.findwork.databinding.FragmentProfileBinding
 import com.example.findwork.ui.messages.MessagesViewModel
 
 class ProfileFragment : Fragment() {
 
 
-    private var _binding: FragmentDashboardBinding? = null
+    private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -26,10 +27,10 @@ class ProfileFragment : Fragment() {
         val dashboardViewModel =
             ViewModelProvider(this).get(ProfileViewModel::class.java)
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
+        val textView: TextView = binding.textProfile
         dashboardViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
