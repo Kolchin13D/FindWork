@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/shadows"
     tools:context=".ui.search.SearchFragment">
 
     <TextView
@@ -13,13 +14,63 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
         android:text="SEARCH"
+        android:textAlignment="center"
         android:textColor="@color/blue"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputEmail"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/sfprodisplayregular"
+        android:hint="label"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="8dp"
+        app:boxStrokeColor="@color/white"
+        app:cursorColor="@color/white"
+        app:endIconDrawable="@drawable/baseline_clear_24"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/grey2"
+        app:helperTextTextColor="@color/red"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:startIconDrawable="@drawable/search"
+        app:startIconTint="@color/grey3"
+        app:startIconTintMode="src_atop">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/InputEditTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey2"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/white" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageButton
+        android:id="@+id/button2"
+        style="@style/Theme.AppCompat.DayNight"
+        android:layout_width="56dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/filters"
+        android:backgroundTint="@color/grey2"
+        android:text="B"
+        app:layout_constraintBottom_toBottomOf="@+id/inputEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/inputEmail" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

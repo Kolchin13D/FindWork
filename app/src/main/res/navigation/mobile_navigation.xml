@@ -42,6 +42,18 @@
         <action
             android:id="@+id/action_navigation_login_to_navigation_search"
             app:destination="@id/navigation_search" />
+        <action
+            android:id="@+id/action_navigation_login_to_navigation_password"
+            app:destination="@id/navigation_password" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_password"
+        android:name="com.example.findwork.ui.password.PasswordFragment"
+        tools:layout="@layout/fragment_password" >
+        <action
+            android:id="@+id/action_navigation_login_to_navigation_search"
+            app:destination="@id/navigation_search" />
     </fragment>
 
 
