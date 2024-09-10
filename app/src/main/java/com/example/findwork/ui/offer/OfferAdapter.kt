@@ -3,6 +3,7 @@ package com.example.findwork.ui.offer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.findwork.R
 
@@ -11,12 +12,12 @@ class OfferAdapter(val itemList: ArrayList<Offer>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OfferViewHolder {
 
-        val viewHolder2 = LayoutInflater.from(parent.context)
+        val viewHolder = LayoutInflater.from(parent.context)
             .inflate(com.example.findwork.R.layout.offer_item,
                 parent, false
             )
 
-        return OfferViewHolder(viewHolder2)
+        return OfferViewHolder(viewHolder)
     }
 
     override fun getItemCount(): Int {
@@ -25,19 +26,22 @@ class OfferAdapter(val itemList: ArrayList<Offer>) :
 
     override fun onBindViewHolder(holder: OfferViewHolder, position: Int) {
 
-        holder.titleOffer.set
+        holder.titleOffer.setText(itemList[position].titleOffer)
+        holder.linkOffer.setText(itemList[position].linkOffer)
 
     }
 
-    class OfferViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        lateinit var buttonOffer: String
-        lateinit var idOffer: String
-        lateinit var titleOffer: String
-        lateinit var linkOffer: String
+    inner class OfferViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        init {
-            titleOffer = itemView.findViewById<RecyclerView>()
+        lateinit var buttonOffer: TextView
+        lateinit var idOffer: TextView
+        lateinit var titleOffer: TextView
+        lateinit var linkOffer: TextView
+
+        init{
+            titleOffer = itemView.findViewById(R.id.titleOffer)
+            linkOffer = itemView.findViewById(R.id.linkOffer)
         }
 
     }

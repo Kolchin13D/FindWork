@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginHorizontal="16dp"
     android:layout_marginVertical="8dp"
-    android:layout_height="wrap_content"
     android:background="@drawable/backgound"
     tools:context=".ui.search.SearchFragment">
 
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/vacancyNameTV"
+        android:id="@+id/titleVacancy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -34,19 +34,19 @@
         app:layout_constraintTop_toBottomOf="@+id/lookingNumber" />
 
     <TextView
-        android:id="@+id/cityTV"
+        android:id="@+id/address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="Минск"
         android:textColor="@color/white"
         android:textSize="14dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vacancyNameTV" />
+        app:layout_constraintTop_toBottomOf="@+id/titleVacancy" />
 
     <TextView
-        android:id="@+id/companyTV"
+        android:id="@+id/company"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -55,26 +55,26 @@
         android:textColor="@color/white"
         android:textSize="14dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cityTV" />
+        app:layout_constraintTop_toBottomOf="@+id/address" />
 
     <TextView
-        android:id="@+id/exp_ageTV"
+        android:id="@+id/experience"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="Опыт от 1 года до 3 лет"
         android:textColor="@color/white"
         android:textSize="14dp"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/companyTV" />
+        app:layout_constraintTop_toBottomOf="@+id/company" />
 
     <TextView
-        android:id="@+id/data_postTV"
+        android:id="@+id/publishedDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="Опубликовано 20 февраля"
         android:textColor="@color/grey3"
         android:textSize="14dp"
@@ -94,12 +94,12 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="12dp"
+        android:layout_height="10dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/experience"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/companyTV"
+        app:layout_constraintTop_toTopOf="@+id/experience"
         app:srcCompat="@drawable/bag" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -119,7 +119,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/data_postTV" />
+        app:layout_constraintTop_toBottomOf="@+id/publishedDate" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

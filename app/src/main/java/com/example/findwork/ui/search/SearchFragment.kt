@@ -53,11 +53,19 @@ class SearchFragment : Fragment() {
         var itemList: ArrayList<Vacancy> = java.util.ArrayList()
         var offerList: ArrayList<Offer> = java.util.ArrayList()
 
-        val obj1 = Vacancy("Moscow", "OOO 1c", "3", 14, "11.01.24", "Employer")
+        val obj1 = Vacancy("Moscow", "OOO 1c", "1 -3 years", "13", "11.01.24", "1C Developer")
         itemList.add(obj1)
 
-        val obj2 = Offer("1","2")
-        offerList.add(obj2)
+        val obj2 = Vacancy("SPB", "HH.RU", "0 - 1 years", "10", "13.06.24", "Recruiter")
+        itemList.add(obj2)
+
+        val off1 = Offer("Вакансии\nрядом с вами","")
+        val off2 = Offer("Поднять резюме\nв поиске","Поднять")
+        val off3 = Offer("Временная\nработа и\nподработка","")
+        offerList.add(off1)
+        offerList.add(off2)
+        offerList.add(off3)
+
 
         val vacancyAdapter = VacancyAdaper(itemList)
         recyclerViewVacancies.adapter = vacancyAdapter

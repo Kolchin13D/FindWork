@@ -6,18 +6,19 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.findwork.R
 
 class VacancyAdaper(val itemList: ArrayList<Vacancy>) :
     RecyclerView.Adapter<VacancyAdaper.VacancyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VacancyViewHolder {
 
-        val viewHolder2 = LayoutInflater.from(parent.context)
-            .inflate(com.example.findwork.R.layout.vacancy_item,
+        val viewHolder = LayoutInflater.from(parent.context)
+            .inflate(R.layout.vacancy_item,
             parent, false
         )
 
-        return VacancyViewHolder(viewHolder2)
+        return VacancyViewHolder(viewHolder)
     }
 
     override fun getItemCount(): Int {
@@ -26,12 +27,12 @@ class VacancyAdaper(val itemList: ArrayList<Vacancy>) :
 
     override fun onBindViewHolder(holder: VacancyViewHolder, position: Int) {
 
-//        holder.lookingNumber.setText(itemList[position].lookingNumber)
-//        holder.title.setText(itemList[position].title)
-//        holder.address.setText(itemList[position].address)
-//        holder.company.setText(itemList[position].company)
-//        holder.experience.setText(itemList[position].experience)
-//        holder.publishedDate.setText(itemList[position].publishedDate)
+        holder.lookingNumber.setText(itemList[position].lookingNumber)
+        holder.title.setText(itemList[position].titleVacancy)
+        holder.address.setText(itemList[position].address)
+        holder.company.setText(itemList[position].company)
+        holder.experience.setText(itemList[position].experience)
+        holder.publishedDate.setText(itemList[position].publishedDate)
 
     }
 
@@ -45,6 +46,12 @@ class VacancyAdaper(val itemList: ArrayList<Vacancy>) :
         lateinit var publishedDate: TextView
 
         init {
+            lookingNumber = itemView.findViewById(R.id.lookingNumber)
+            title = itemView.findViewById(R.id.titleVacancy)
+            address = itemView.findViewById(R.id.address)
+            company = itemView.findViewById(R.id.company)
+            experience = itemView.findViewById(R.id.experience)
+            publishedDate = itemView.findViewById(R.id.publishedDate)
 
             itemView.setOnClickListener() {
                 Toast.makeText(
