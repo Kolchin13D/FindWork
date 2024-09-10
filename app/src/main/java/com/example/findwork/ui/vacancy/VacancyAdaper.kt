@@ -3,12 +3,9 @@ package com.example.findwork.ui.vacancy
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.drawerlayout.R
 import androidx.recyclerview.widget.RecyclerView
-import com.example.findwork.ui.search.SearchFragment
 
 class VacancyAdaper(val itemList: ArrayList<Vacancy>) :
     RecyclerView.Adapter<VacancyAdaper.VacancyViewHolder>() {
@@ -41,7 +38,6 @@ class VacancyAdaper(val itemList: ArrayList<Vacancy>) :
     class VacancyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         lateinit var lookingNumber: TextView
-
         lateinit var title: TextView
         lateinit var address: TextView
         lateinit var company: TextView

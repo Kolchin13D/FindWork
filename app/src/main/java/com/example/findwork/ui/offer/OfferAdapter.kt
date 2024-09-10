@@ -3,8 +3,6 @@ package com.example.findwork.ui.offer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.findwork.R
 
@@ -13,33 +11,34 @@ class OfferAdapter(val itemList: ArrayList<Offer>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OfferViewHolder {
 
-        val viewHolder = LayoutInflater.from(parent.context)
+        val viewHolder2 = LayoutInflater.from(parent.context)
             .inflate(com.example.findwork.R.layout.offer_item,
-                parent, false)
+                parent, false
+            )
 
-        return OfferViewHolder(viewHolder)
-    }
-
-    override fun onBindViewHolder(holder: OfferAdapter.OfferViewHolder, position: Int) {
-
-
+        return OfferViewHolder(viewHolder2)
     }
 
     override fun getItemCount(): Int {
         return itemList.size
     }
 
+    override fun onBindViewHolder(holder: OfferViewHolder, position: Int) {
+
+        holder.titleOffer.set
+
+    }
 
     class OfferViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        lateinit var button: Button
-        lateinit var id: String
-        lateinit var link: String
-        lateinit var title: String
+        lateinit var buttonOffer: String
+        lateinit var idOffer: String
+        lateinit var titleOffer: String
+        lateinit var linkOffer: String
 
         init {
-
-
+            titleOffer = itemView.findViewById<RecyclerView>()
         }
+
     }
 }

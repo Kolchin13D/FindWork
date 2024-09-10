@@ -42,7 +42,7 @@ class SearchFragment : Fragment() {
         )
 
         val recyclerViewOffer: RecyclerView = binding.recyclerOffers
-        recyclerViewVacancies.layoutManager = LinearLayoutManager(
+        recyclerViewOffer.layoutManager = LinearLayoutManager(
             context,
             LinearLayoutManager.HORIZONTAL,
             false
@@ -56,7 +56,7 @@ class SearchFragment : Fragment() {
         val obj1 = Vacancy("Moscow", "OOO 1c", "3", 14, "11.01.24", "Employer")
         itemList.add(obj1)
 
-        val obj2 = Offer("1","2","3", "4")
+        val obj2 = Offer("1","2")
         offerList.add(obj2)
 
         val vacancyAdapter = VacancyAdaper(itemList)
