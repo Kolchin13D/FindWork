@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-kapt")
+
+
 }
 
 android {
@@ -55,7 +58,6 @@ dependencies {
     implementation("com.google.android.material:material:1.12.0")
 
     val nav_version = "2.8.0"
-
     // Jetpack Compose integration
     implementation("androidx.navigation:navigation-compose:$nav_version")
 
@@ -68,5 +70,22 @@ dependencies {
 
     // Testing Navigation
     androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
+
+    //  retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.11.0")
+
+    //  coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1")
+
+    //  lifecycle
+    val lifecycle_version = "2.8.5"
+
+    // ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    // LiveData
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+    // Annotation processor
+    kapt("androidx.lifecycle:lifecycle-compiler:$lifecycle_version")
 
 }
