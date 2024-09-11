@@ -1,13 +1,11 @@
 package com.example.findwork.ui.search
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.findwork.databinding.FragmentHomeBinding
@@ -15,7 +13,6 @@ import com.example.findwork.ui.offer.Offer
 import com.example.findwork.ui.offer.OfferAdapter
 import com.example.findwork.ui.vacancy.Vacancy
 import com.example.findwork.ui.vacancy.VacancyAdaper
-import com.example.findwork.ui.vacancy.detail.DetailVacancyFragment
 
 class SearchFragment : Fragment() {
 
@@ -31,8 +28,6 @@ class SearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        val homeViewModel =
-            ViewModelProvider(this).get(SearchViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -50,7 +45,6 @@ class SearchFragment : Fragment() {
             LinearLayoutManager.HORIZONTAL,
             false
         )
-
 
 
         var itemList: ArrayList<Vacancy> = java.util.ArrayList()
