@@ -1,4 +1,4 @@
-package com.example.findwork.ui.respone
+package com.example.findwork.ui.response
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

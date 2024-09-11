@@ -9,7 +9,11 @@
         android:id="@+id/navigation_search"
         android:name="com.example.findwork.ui.search.SearchFragment"
         android:label="@string/title_search"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_search_to_navigation_detailVacancy"
+            app:destination="@id/navigation_detailVacancy" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_favorite"
@@ -19,7 +23,7 @@
 
     <fragment
         android:id="@+id/navigation_response"
-        android:name="com.example.findwork.ui.respone.ResponseFragment"
+        android:name="com.example.findwork.ui.response.ResponseFragment"
         android:label="@string/title_response"
         tools:layout="@layout/fragment_notifications" />
 
@@ -55,6 +59,12 @@
             android:id="@+id/action_navigation_login_to_navigation_search"
             app:destination="@id/navigation_search" />
     </fragment>
+
+    <fragment
+        android:id="@+id/navigation_detailVacancy"
+        android:name="com.example.findwork.ui.vacancy.detail.DetailVacancyFragment"
+        android:label="detailed vacany"
+        tools:layout="@layout/fragment_detail_vacancy" />
 
 
 

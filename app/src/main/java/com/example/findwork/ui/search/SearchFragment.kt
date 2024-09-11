@@ -1,5 +1,6 @@
 package com.example.findwork.ui.search
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,7 @@ import com.example.findwork.ui.offer.Offer
 import com.example.findwork.ui.offer.OfferAdapter
 import com.example.findwork.ui.vacancy.Vacancy
 import com.example.findwork.ui.vacancy.VacancyAdaper
+import com.example.findwork.ui.vacancy.detail.DetailVacancyFragment
 
 class SearchFragment : Fragment() {
 
@@ -81,6 +83,7 @@ class SearchFragment : Fragment() {
                 Toast.LENGTH_SHORT
             ).show()
         }
+
 
         return root
     }

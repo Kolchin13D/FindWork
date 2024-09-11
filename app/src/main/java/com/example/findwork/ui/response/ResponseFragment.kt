@@ -1,4 +1,4 @@
-package com.example.findwork.ui.respone
+package com.example.findwork.ui.response
 
 import android.os.Bundle
 import android.view.LayoutInflater
