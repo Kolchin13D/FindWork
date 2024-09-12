@@ -3,19 +3,12 @@ package com.example.findwork.ui.vacancy
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentTransaction
-import androidx.fragment.app.commit
-import androidx.fragment.app.replace
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.findwork.R
 import com.example.findwork.ui.vacancy.detail.DetailVacancyFragment
-import kotlin.coroutines.coroutineContext
 
 class VacancyAdaper(val itemList: ArrayList<Vacancy>) :
     RecyclerView.Adapter<VacancyAdaper.VacancyViewHolder>() {
@@ -47,20 +40,26 @@ class VacancyAdaper(val itemList: ArrayList<Vacancy>) :
         holder.publishedDate.setText(itemList[position].publishedDate)
 
 
-        holder.itemView.setOnClickListener{ view ->
+        holder.itemView.setOnClickListener { view ->
             view.findNavController().navigate(R.id.navigation_detailVacancy)
         }
 
-//        holder.itemView.setOnClickListener(object :View.OnClickListener{
-//            override fun onClick(v: View?) {
-//                val activity = v!!.context as AppCompatActivity
-//                val detailVacancyFragment = DetailVacancyFragment()
-//                activity.supportFragmentManager.beginTransaction()
-//                    .replace(R.id.navigation_detailVacancy, detailVacancyFragment)
-//                    .commit()
+
+
+        holder.responseBtn.setOnClickListener { view ->
+
+            val fragment = DetailVacancyFragment()
+            //fragment.showDialog()
+
+//            val activity = view.context.applicationContext as AppCompatActivity
 //
-//            }
-//        })
+//            val fragment = SearchFragment()
+//            val showDialog = ResponseDialogFragment()
+//            showDialog.show((activity).supportFragmentManager, "showDialog")
+
+            //Toast.makeText(view.context, "BTN", Toast.LENGTH_SHORT).show()
+        }
+
 
     }
 
@@ -72,6 +71,7 @@ class VacancyAdaper(val itemList: ArrayList<Vacancy>) :
         lateinit var company: TextView
         lateinit var experience: TextView
         lateinit var publishedDate: TextView
+        lateinit var responseBtn: Button
 
         init {
             lookingNumber = itemView.findViewById(R.id.lookingNumber)
@@ -80,18 +80,7 @@ class VacancyAdaper(val itemList: ArrayList<Vacancy>) :
             company = itemView.findViewById(R.id.company)
             experience = itemView.findViewById(R.id.experience)
             publishedDate = itemView.findViewById(R.id.publishedDate)
-
-//            itemView.setOnClickListener() {
-//
-//                Toast.makeText(
-//                    itemView.context,
-//                    "You select ${itemView}",
-//                    Toast.LENGTH_SHORT
-//                ).show()
-//
-//            }
+            responseBtn = itemView.findViewById(R.id.responseBtn)
         }
-
     }
-
 }

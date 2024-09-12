@@ -1,13 +1,15 @@
 package com.example.findwork.ui.vacancy.detail
 
+import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
+import android.view.Window
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.findwork.R
 import com.example.findwork.databinding.FragmentDetailVacancyBinding
 import com.example.findwork.ui.response.ResponseDialogFragment
 
@@ -48,8 +50,8 @@ class DetailVacancyFragment : Fragment() {
         binding.detVacResBtn.setOnClickListener {
 
             val showDialog = ResponseDialogFragment()
-            showDialog.show((activity as AppCompatActivity).supportFragmentManager, "showDialog")
-
+            //showDialog.show((activity as AppCompatActivity).supportFragmentManager, "showDialog")
+            showDialog()
 
         }
 
@@ -62,26 +64,17 @@ class DetailVacancyFragment : Fragment() {
         _binding = null
     }
 
-    private fun showDialog(title: String) {
-//        val dialog = ResponseDialogFragment()
-//        dialog.reque(Window.FEATURE_NO_TITLE)
-//        dialog.setCancelable(false)
-//        dialog.setContentView(R.layout.fragment_response_dialog)
-//
-//        val body = dialog.findViewById(R.id.body) as TextView
-//        body.text = title
-//
-//        val yesBtn = dialog.findViewById(R.id.yesBtn) as Button
-//        yesBtn.setOnClickListener {
-//            dialog.dismiss()
-//        }
-//
-//        val noBtn = dialog.findViewById(R.id.noBtn) as Button
-//        noBtn.setOnClickListener {
-//            dialog.dismiss()
-//        }
-//
-//        dialog.show()
+    public fun showDialog() {
+        val dialogBinding = layoutInflater.inflate(R.layout.fragment_response_dialog, null)
+
+        var context = context
+        val dialog = Dialog(context!!)
+
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setContentView(dialogBinding)
+        dialog.setCancelable(true)
+
+        dialog.show()
     }
 
 }
