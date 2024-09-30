@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.findwork.R
-import com.example.findwork.ui.vacancy.detail.DetailVacancyFragment
+import com.example.findwork.ui.response.ResponseDialogFragment
 
 class VacancyAdaper(val itemList: ArrayList<Vacancy>) :
     RecyclerView.Adapter<VacancyAdaper.VacancyViewHolder>() {
@@ -48,8 +48,10 @@ class VacancyAdaper(val itemList: ArrayList<Vacancy>) :
 
         holder.responseBtn.setOnClickListener { view ->
 
-            val fragment = DetailVacancyFragment()
-            //fragment.showDialog()
+            view.findNavController().navigate(R.id.navigation_detailVacancy)
+
+            val showDialog = ResponseDialogFragment()
+
 
 //            val activity = view.context.applicationContext as AppCompatActivity
 //

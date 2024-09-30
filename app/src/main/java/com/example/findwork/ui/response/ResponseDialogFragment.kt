@@ -1,34 +1,47 @@
 package com.example.findwork.ui.response
 
+import android.app.AlertDialog
+import android.app.Dialog
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
+import android.util.DisplayMetrics
+import android.view.Gravity
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.example.findwork.R
 import com.example.findwork.databinding.FragmentResponseDialogBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 
 class ResponseDialogFragment : DialogFragment() {
 
-
     private var _binding: FragmentResponseDialogBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+    override fun onCreateDialog(
         savedInstanceState: Bundle?
-    ): View? {
+    ): Dialog {
+        val builder = AlertDialog.Builder(context)
+        builder.setView(R.layout.fragment_response_dialog)
 
-        var rootView: View = inflater.inflate(R.layout.fragment_response_dialog, container, false)
+        val customDialog = builder.create()
+        customDialog.show()
 
-        _binding = FragmentResponseDialogBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        customDialog.window?.setGravity(Gravity.BOTTOM)
+        customDialog.window?.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
+        //customDialog.requestWindowFeature(Window.FEATURE_CUSTOM_TITLE)
 
-        return rootView
+        val displayMetrics = DisplayMetrics()
 
-//        return inflater.inflate(R.layout.fragment_response_dialog, container, false)
+        context?.let { MaterialAlertDialogBuilder(it, R.style.NoMarginsDialog) }
+
+
+
+        return customDialog
     }
 
+    override fun getTheme(): Int = R.style.NoMarginsDialog
 
 }

@@ -1,15 +1,13 @@
 package com.example.findwork.ui.vacancy.detail
 
-import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.findwork.R
 import com.example.findwork.databinding.FragmentDetailVacancyBinding
 import com.example.findwork.ui.response.ResponseDialogFragment
 
@@ -49,32 +47,18 @@ class DetailVacancyFragment : Fragment() {
 
         binding.detVacResBtn.setOnClickListener {
 
+
             val showDialog = ResponseDialogFragment()
-            //showDialog.show((activity as AppCompatActivity).supportFragmentManager, "showDialog")
-            showDialog()
+            showDialog.show((activity as AppCompatActivity).supportFragmentManager, "showDialog")
 
         }
 
         return binding.root
     }
 
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    public fun showDialog() {
-        val dialogBinding = layoutInflater.inflate(R.layout.fragment_response_dialog, null)
-
-        var context = context
-        val dialog = Dialog(context!!)
-
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        dialog.setContentView(dialogBinding)
-        dialog.setCancelable(true)
-
-        dialog.show()
     }
 
 }
